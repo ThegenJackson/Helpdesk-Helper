@@ -70,11 +70,13 @@ export const TicketWriter = () => {
 
   return (
     <div>
-      <h1 className="head_text">Ticket Writer</h1>
-      <br />
+      <h1 className="head_text">
+        Ticket Writer</h1>
+      <div className="py-3 flex justify-items-center">
+        <div>
       <form onSubmit={handleSubmit}>
         <div className="flex justify-start">
-        <label className="px-3">
+        <label>
           Name:
           <input type="text" value={name} onChange={handleNameChange} className="formbox" />
         </label>
@@ -86,7 +88,7 @@ export const TicketWriter = () => {
         <br />
         </div>
         <div className="flex justify-start">
-        <label className="px-3">
+        <label>
           Phone:
           <input type="text" value={phone} onChange={handlePhoneChange} className="formbox" />
         </label>
@@ -101,8 +103,8 @@ export const TicketWriter = () => {
         </label>
         </div>
         <br />
-        <div className="flex justify-start">
-        <label className="px-3">
+        
+        <label>
           Type:
           <label>
             <br />
@@ -128,7 +130,7 @@ export const TicketWriter = () => {
         </label>
         <br />
         {formType === 'Incident' && (
-          <>
+          <> 
             <label className="px-3">
               Module:
               <input type="text" value={module} onChange={(e) => setModule(e.target.value)} className="formbox" />
@@ -140,7 +142,7 @@ export const TicketWriter = () => {
               <textarea rows="3" value={symptoms} onChange={(e) => setSymptoms(e.target.value)} className="formbox" />
             </label>
             <br />
-          </>
+            </>
         )}
         {formType === 'Request' && (
           <>
@@ -152,7 +154,7 @@ export const TicketWriter = () => {
             <br />
           </>
         )}
-          </div>
+          <div className="flex justify-items-start">
           <label className="px-3">
           Priority:
           <select value={priority} onChange={handlePriorityChange} className="formbox" >
@@ -163,7 +165,7 @@ export const TicketWriter = () => {
           </select>
         </label>
         <br />
-        <label>
+        <label className="px-3">
           Time
             <br />
             <input
@@ -186,15 +188,20 @@ export const TicketWriter = () => {
             />
             Afternoon
           </label>
+          </div>
           <br />
+          <div className="flex justify-around">
         <button type="submit" className="_btn">Submit</button>
         <button className="_btn" onClick={refreshPage}>Clear</button>
+           </div>
       </form>
-      <hr />
+      </div>
+      <div className="p-3">
       <textarea value={formData} readOnly rows="5" cols="50" className="formbox" />
       <br />
       <textarea value={emailData} readOnly rows="14" cols="50" className="formbox" />
-
+      </div>
+      </div>
     </div>
   );
 };
