@@ -47,7 +47,7 @@ export const TicketWriter = () => {
     event.preventDefault();
     let TicketSummary = '';
     if (formType === 'Incident') {
-      TicketSummary = `Call received from ${name} at ${company} regarding their ${product} ${module}, advising ${symptoms}.\n\n${name} called into Support on ${phone}.\nTicket assigned as ${priority} priority.`;
+      TicketSummary = `Call received from ${name} at ${company} regarding their ${product} ${module} ${symptoms}.\n\n${name} called into Support on ${phone}.\nTicket assigned as ${priority} priority.`;
     } else if (formType === 'Request') {
       TicketSummary = `Call received from ${name} at ${company} regarding their ${product}, requesting ${details}.\n\n${name} called into Support on ${phone}.\nTicket assigned as ${priority} priority.`;
     }
@@ -55,14 +55,14 @@ export const TicketWriter = () => {
 
     let EmailSummary = '';
     if (formTime === 'Morning') {
-      EmailSummary = `Good morning ${name},\n\nThis email serves to confirm we spoke over the phone this morning regarding your ${product}.\n\nThis ticket has been assigned to [NAME] & we will be in contact with you shortly regarding any updates.\n\nCurrently, this ticket has been assigned as ${priority} priority.\n\nThank you,\n\nInspHire Helpdesk.`;
+      EmailSummary = `Good morning ${name},\n\nThis email serves to confirm we spoke over the phone this morning regarding your ${product}.\n\nThis ticket has been assigned to [NAME] & we will be in contact with you shortly regarding any updates.\n\nCurrently, this ticket has been assigned as ${priority} priority.\n\nThank you,\nInspHire Helpdesk.`;
     } else if (formTime === 'Afternoon') {
-      EmailSummary = `Good afternoon ${name},\n\nThis email serves to confirm we spoke over the phone this afternoon regarding your ${product}.\n\nThis ticket has been assigned to [NAME] & we will be in contact with you shortly regarding any updates.\n\nCurrently, this ticket has been assigned as ${priority} priority.\n\nThank you,\n\nInspHire Helpdesk.`;
+      EmailSummary = `Good afternoon ${name},\n\nThis email serves to confirm we spoke over the phone this afternoon regarding your ${product}.\n\nThis ticket has been assigned to [NAME] & we will be in contact with you shortly regarding any updates.\n\nCurrently, this ticket has been assigned as ${priority} priority.\n\nThank you,\nInspHire Helpdesk.`;
     }
     setEmailData(`${EmailSummary}`);
   };
 
-  function refreshPage() {
+  const refreshPage = () => {
     window.location.reload(false);
   }
 
@@ -102,8 +102,7 @@ export const TicketWriter = () => {
           </select>
         </label>
         </div>
-        <br />
-        
+        <br /> 
         <label>
           Type:
           <label>
@@ -166,7 +165,7 @@ export const TicketWriter = () => {
         </label>
         <br />
         <label className="px-3">
-          Time
+          Time:
             <br />
             <input
               type="radio"
@@ -190,16 +189,16 @@ export const TicketWriter = () => {
           </label>
           </div>
           <br />
-          <div className="flex justify-around">
-        <button type="submit" className="_btn">Submit</button>
+          <div className="flex space-x-3">
+        <button className="_btn" onClick={handleSubmit}>Submit</button>
         <button className="_btn" onClick={refreshPage}>Clear</button>
            </div>
       </form>
       </div>
       <div className="p-3">
-      <textarea value={formData} readOnly rows="5" cols="50" className="formbox" />
+      <textarea value={formData} readOnly rows="5" cols="50" className="formbox" placeholder="Quick Ticket"/>
       <br />
-      <textarea value={emailData} readOnly rows="14" cols="50" className="formbox" />
+      <textarea value={emailData} readOnly rows="12" cols="50" className="formbox" placeholder="Acknowledgement Email"/>
       </div>
       </div>
     </div>
