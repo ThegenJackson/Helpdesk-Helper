@@ -8,8 +8,8 @@ export const TicketWriter = () => {
   const [priority, setPriority] = useState('P4');
   const [formData, setFormData] = useState('');
   const [emailData, setEmailData] = useState('');
-  const [formType, setFormType] = useState('');
-  const [formTime, setFormTime] = useState('');
+  const [formType, setFormType] = useState('Incident');
+  const [formTime, setFormTime] = useState('Morning');
   const [module, setModule] = useState('');
   const [symptoms, setSymptoms] = useState('');
   const [details, setDetails] = useState('');
@@ -131,7 +131,7 @@ export const TicketWriter = () => {
         <br />
         {formType === 'Incident' && (
           <> 
-            <label className="px-3">
+            <label>
               Module:
               <input type="text" value={module} onChange={(e) => setModule(e.target.value)} className="formbox" />
             </label>
