@@ -4,16 +4,11 @@ import { logo } from '../assets'
 
 export const Home = () => {
   return (
-    <header className="w-full flex justify-center items-center flex-col">
-
-    {/* Logo */}
-    <nav className="w-full">
+    <header className="flex justify-start">
 
       <img 
       src={logo} alt="Helpdesk_Helper" className="w-3/5 object-contain"
       />
-
-    </nav>
 
     {/*
     <nav className="w-3/5 flex justify-between items-center flex-row mb-3">
