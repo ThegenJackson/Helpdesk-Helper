@@ -81,7 +81,7 @@ export const TicketWriter = () => {
           <input type="text" value={name} onChange={handleNameChange} className="formbox" />
         </label>
         <br />
-        <label className="px-3">
+        <label className="sm:px-3">
           Company:
           <input type="text" value={company} onChange={handleCompanyChange} className="formbox" />
         </label>
@@ -93,7 +93,7 @@ export const TicketWriter = () => {
           <input type="text" value={phone} onChange={handlePhoneChange} className="formbox" />
         </label>
         <br />
-        <label className="px-3">
+        <label className="sm:px-3">
           Product:
           <select value={product} onChange={handleProductChange} className="formbox" >
             <option value="InspHire Office">InspHire Office</option>
@@ -154,7 +154,7 @@ export const TicketWriter = () => {
           </>
         )}
           <div className="sm:flex justify-items-start">
-          <label className="px-3">
+          <label>
           Priority:
           <select value={priority} onChange={handlePriorityChange} className="formbox" >
             <option value="P1">P1</option>
@@ -164,7 +164,7 @@ export const TicketWriter = () => {
           </select>
         </label>
         <br />
-        <label className="px-3">
+        <label className="sm:px-3">
           Time:
             <br />
             <input
