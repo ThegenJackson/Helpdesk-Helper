@@ -72,7 +72,7 @@ export const TicketWriter = () => {
     <div>
       <h1 className="head_text">
         Ticket Writer</h1>
-      <div className="py-3 flex justify-items-center">
+      <div className="py-3 sm:flex justify-items-center">
         <div>
       <form onSubmit={handleSubmit}>
         <div className="flex justify-start">
