@@ -196,9 +196,9 @@ export const TicketWriter = () => {
       </form>
       </div>
       <div className="p-3">
-      <textarea value={formData} readOnly rows="5" cols="50" className="formbox" placeholder="Quick Ticket"/>
+      <textarea value={formData} readOnly rows="5" cols="50" className="textbox" placeholder="Quick Ticket"/>
       <br />
-      <textarea value={emailData} readOnly rows="13" cols="50" className="formbox" placeholder="Acknowledgement Email"/>
+      <textarea value={emailData} readOnly rows="13" cols="50" className="textbox" placeholder="Acknowledgement Email"/>
       </div>
       </div>
     </div>
