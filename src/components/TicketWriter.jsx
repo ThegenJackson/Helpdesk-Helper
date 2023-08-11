@@ -73,9 +73,9 @@ export const TicketWriter = () => {
       <h1 className="head_text">
         Ticket Writer</h1>
       <div className="py-3 sm:flex justify-items-center">
-        <div>
-      <form onSubmit={handleSubmit}>
-        <div className="flex justify-start">
+        <div className="flex justify-center">
+      <form>
+        <div className="sm:flex justify-start">
         <label>
           Name:
           <input type="text" value={name} onChange={handleNameChange} className="formbox" />
@@ -87,7 +87,7 @@ export const TicketWriter = () => {
         </label>
         <br />
         </div>
-        <div className="flex justify-start">
+        <div className="sm:flex justify-start">
         <label>
           Phone:
           <input type="text" value={phone} onChange={handlePhoneChange} className="formbox" />
@@ -153,7 +153,7 @@ export const TicketWriter = () => {
             <br />
           </>
         )}
-          <div className="flex justify-items-start">
+          <div className="sm:flex justify-items-start">
           <label className="px-3">
           Priority:
           <select value={priority} onChange={handlePriorityChange} className="formbox" >
@@ -198,7 +198,7 @@ export const TicketWriter = () => {
       <div className="p-3">
       <textarea value={formData} readOnly rows="5" cols="50" className="formbox" placeholder="Quick Ticket"/>
       <br />
-      <textarea value={emailData} readOnly rows="12" cols="50" className="formbox" placeholder="Acknowledgement Email"/>
+      <textarea value={emailData} readOnly rows="13" cols="50" className="formbox" placeholder="Acknowledgement Email"/>
       </div>
       </div>
     </div>
