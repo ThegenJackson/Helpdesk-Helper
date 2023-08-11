@@ -7,10 +7,10 @@ export const Home = () => {
     <header className="w-full flex justify-center items-center flex-col">
 
     {/* Logo */}
-    <nav className="w-full flex justify-between items-center flex-row mb-3 pt-3">
+    <nav className="w-full">
 
       <img 
-      src={logo} alt="Helpdesk_Helper" className="w-2/5 object-contain"
+      src={logo} alt="Helpdesk_Helper" className="w-3/5 object-contain"
       />
 
     </nav>

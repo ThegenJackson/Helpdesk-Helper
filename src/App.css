@@ -33,7 +33,7 @@ This is evil stuff...
 }
 
 .head_text {
-  @apply mt-5 text-5xl font-extrabold leading-[1.15] text-gray-300 sm:text-6xl text-center;
+  @apply text-5xl font-extrabold leading-[1.15] text-gray-300 sm:text-6xl text-center;
 }
 
 .formbox {
@@ -41,7 +41,7 @@ This is evil stuff...
 }
 
 .textbox {
-  @apply bg-gray-800;
+  @apply bg-gray-800 mt-3;
 }
 
 .formfield {

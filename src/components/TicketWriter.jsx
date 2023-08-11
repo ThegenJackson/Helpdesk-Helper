@@ -189,7 +189,7 @@ export const TicketWriter = () => {
           </label>
           </div>
           <br />
-          <div className="flex space-x-3">
+          <div className="flex-row space-x-3">
         <button className="_btn" onClick={handleSubmit}>Submit</button>
         <button className="_btn" onClick={refreshPage}>Clear</button>
            </div>
