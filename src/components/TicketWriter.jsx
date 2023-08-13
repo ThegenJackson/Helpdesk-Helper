@@ -72,6 +72,9 @@ export const TicketWriter = () => {
     <div>
       <h1 className="head_text">
         Ticket Writer</h1>
+        <p1 className="flex justify-center sm:invisible">
+          This site is intended to be used on desktop only.
+        </p1>
       <div className="py-3 sm:flex justify-items-center">
         <div className="flex justify-center">
       <form>
