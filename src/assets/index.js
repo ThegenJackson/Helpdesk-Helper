@@ -1,4 +1,4 @@
-import logo from './LogoHorizontal.png'
+import logo from './Logo_1.png'
 
 
 export {
