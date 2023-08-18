@@ -15,7 +15,7 @@ const Navbar = () => {
           HELPDESK HELPER
         
         <h2 className="subheader">
-          By EvilSoftware
+          BY EVILSOFTWARE
         </h2>
         
         </h1>
