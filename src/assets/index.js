@@ -1,5 +1,4 @@
-import logo from './Logo_1.png'
-
+import logo from './Logo.png'
 
 export {
     logo

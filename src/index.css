@@ -4,35 +4,21 @@
 
 
 
-body {
-    background-color: #011e45;
-    color: white;
+.body {
+    display: grid;
+    width: 100%;
+    place-items: center;
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    --tw-bg-opacity: 1;
+    background-color: hsl(var(--b2) / var(--tw-bg-opacity));
+}
+.body > * {
+    grid-column-start: 1;
+    grid-row-start: 1;
 }
 
-.header {
-    @apply text-orange-500 text-4xl font-bold tracking-widest sm:text-6xl;
-}
-
-.subheader {
-    @apply text-white text-2xl font-bold px-3 sm:text-3xl;
-}
-
-.pagetitle {
-    @apply text-5xl font-extrabold leading-[1.15] text-gray-300 sm:text-6xl text-center;
-}
-
-.btn {
-    @apply rounded-full bg-gray-700 py-1.5 px-5 text-sm text-gray-300 sm:transition-all hover:bg-gray-300 hover:text-gray-800 hover:scale-125;
-}
-
-.formbox {
-    @apply bg-gray-700 flex text-white;
-}
-
-.textbox {
-    @apply bg-gray-700 mt-3;
-}
-
-.formfield {
-    @apply  py-3;
+.formLabel {
+    @apply ml-1
 }

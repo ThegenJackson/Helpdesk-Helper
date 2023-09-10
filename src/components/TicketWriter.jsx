@@ -51,7 +51,7 @@ export const TicketWriter = () => {
     } else if (formType === 'Request') {
       TicketSummary = `Call received from ${name} at ${company} regarding their ${product}, requesting ${details}.\n\n${name} called into Support on ${phone}.\nTicket assigned as ${priority} priority.`;
     }
-    setFormData(`${TicketSummary}`);
+    setFormData(`${TicketSummary}`); 
 
     let EmailSummary = '';
     if (formTime === 'Morning') {
@@ -69,44 +69,67 @@ export const TicketWriter = () => {
 
 
   return (
-    <div>
-        <h1 className="pagetitle">
-          Ticket Writer</h1>
-          <p1 className="flex justify-center sm:invisible">
-            This site is intended to be used on desktop only.
-          </p1>
-        <div className="flex justify-center">
-        <div className="py-3 sm:flex justify-items-center">
-          <div className="flex justify-center">
-        <form>
-          <div className="sm:flex justify-start">
+
+  <div className="body">
+
+      <div>
+
+      <h1 className="hero text-5xl font-bold">
+      Ticket Writer
+      </h1>
+
+      <p1 className="mb-3 flex justify-center sm:invisible">
+      This site is intended to be used on desktop only.
+      </p1>
+
+      <div className="flex sm:flex-row">
+
+      <div>
+
+      <form>
+
+          <div>
+
+          <div className="flex">
           <label>
             Name:
-            <input type="text" value={name} onChange={handleNameChange} className="formbox" />
+            <input type="text" value={name} onChange={handleNameChange} className="input input-bordered input-sm w-full max-w-xs" />
           </label>
+
           <br />
-          <label className="sm:px-3">
+
+          <label className="ml-2">
             Company:
-            <input type="text" value={company} onChange={handleCompanyChange} className="formbox" />
+            <input type="text" value={company} onChange={handleCompanyChange} className="input input-bordered input-sm w-full max-w-xs" />
           </label>
-          <br />
           </div>
-          <div className="sm:flex justify-start">
+
+          <br />
+
+          </div>
+
+          <div className="flex">
+
           <label>
             Phone:
-            <input type="text" value={phone} onChange={handlePhoneChange} className="formbox" />
+            <input type="text" value={phone} onChange={handlePhoneChange} className="input input-bordered input-sm w-full max-w-xs" />
           </label>
+
           <br />
-          <label className="sm:px-3">
+
+          <label className="ml-2">
             Product:
-            <select value={product} onChange={handleProductChange} className="formbox" >
+            <select value={product} onChange={handleProductChange} className="select select-bordered select-sm w-full max-w-xs" >
               <option value="InspHire Office">InspHire Office</option>
               <option value="InspHire Corporate">InspHire Corporate</option>
               <option value="InspHire Mobile">InspHire Mobile</option>
             </select>
           </label>
+
           </div>
+
           <br /> 
+
           <label>
             Type:
             <label>
@@ -117,9 +140,11 @@ export const TicketWriter = () => {
                 value="Incident"
                 checked={formType === 'Incident'}
                 onChange={handleFormTypeChange}
+                className="radio m-1"
               />
               Incident
             </label>
+
             <label  className="px-3">
               <input
                 type="radio"
@@ -127,48 +152,58 @@ export const TicketWriter = () => {
                 value="Request"
                 checked={formType === 'Request'}
                 onChange={handleFormTypeChange}
+                className="radio m-1"
               />
               Request
             </label>
           </label>
+
           <br />
+
           {formType === 'Incident' && (
             <> 
               <label>
                 Module:
-                <input type="text" value={module} onChange={(e) => setModule(e.target.value)} className="formbox" />
+                <br />
+                <input type="text" value={module} onChange={(e) => setModule(e.target.value)} className="input input-bordered input-sm w-full max-w-xs" />
               </label>
               <br />
               <label>
                 Symptoms:
                 <br />
-                <textarea rows="3" value={symptoms} onChange={(e) => setSymptoms(e.target.value)} className="formbox" />
+                <textarea rows="3" value={symptoms} onChange={(e) => setSymptoms(e.target.value)} className="textarea textarea-bordered" />
               </label>
               <br />
               </>
           )}
+
           {formType === 'Request' && (
             <>
               <label>
                 Details:
                 <br />
-                <textarea rows="3" value={details} onChange={(e) => setDetails(e.target.value)}  className="formbox" />
+                <textarea rows="3" value={details} onChange={(e) => setDetails(e.target.value)}  className="textarea textarea-bordered" />
               </label>
               <br />
             </>
           )}
-            <div className="sm:flex justify-items-start">
+          
+            <div>
+              
             <label>
             Priority:
-            <select value={priority} onChange={handlePriorityChange} className="formbox" >
+            <br />
+            <select value={priority} onChange={handlePriorityChange} className="select select-bordered select-sm w-full max-w-xs" >
               <option value="P1">P1</option>
               <option value="P2">P2</option>
               <option value="P3">P3</option>
               <option value="P4">P4</option>
             </select>
           </label>
+
           <br />
-          <label className="sm:px-3">
+
+          <label>
             Time:
               <br />
               <input
@@ -177,9 +212,11 @@ export const TicketWriter = () => {
                 value="Morning"
                 checked={formTime === 'Morning'}
                 onChange={handleFormTimeChange}
+                className="radio m-1"
               />
               Morning
             </label>
+
             <label>
               <br />
               <input
@@ -188,26 +225,44 @@ export const TicketWriter = () => {
                 value="Afternoon"
                 checked={formTime === 'Afternoon'}
                 onChange={handleFormTimeChange}
+                className="radio m-1"
               />
               Afternoon
             </label>
-            </div>
-            <br />
-            <div className="flex-row space-x-3">
-          <button className="btn" onClick={handleSubmit}>Submit</button>
-          <button className="btn" onClick={refreshPage}>Clear</button>
-            </div>
-        </form>
-        </div>
-        <div className="p-3">
-        <textarea value={formData} readOnly rows="5" cols="50" className="textbox" placeholder="Quick Ticket"/>
-        <br />
-        <textarea value={emailData} readOnly rows="13" cols="50" className="textbox" placeholder="Acknowledgement Email"/>
-        </div>
-        </div>
-      </div>
-    </div>
-  );
-};
 
-export default TicketWriter;
+            </div>
+
+            <br />
+
+            <div className="flex-row space-x-5">
+
+            <button className="btn hover:scale-125" onClick={handleSubmit}>Submit</button>
+
+            <button className="btn hover:scale-125" onClick={refreshPage}>Clear</button>
+
+            </div>
+
+        </form>
+
+        </div>
+
+        <div>
+
+        <div className="p-3 mt-3">
+        <textarea value={formData} readOnly rows="5" cols="50" className="textarea textarea-bordered" placeholder="Quick Ticket"/>
+        <br />
+        <textarea value={emailData} readOnly rows="13" cols="50" className="textarea textarea-bordered" placeholder="Acknowledgement Email"/>
+        </div>
+
+        </div>
+
+        </div>
+
+      </div>
+
+  </div>
+
+  )
+}
+
+export default TicketWriter
