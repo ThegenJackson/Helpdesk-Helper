@@ -100,7 +100,7 @@ export const TicketWriter = () => {
 
           <label className="ml-2">
             Company:
-            <input type="text" value={company} onChange={handleCompanyChange} className="input input-bordered input-sm w-full max-w-xs" />
+            <input type="text" value={company} onChange={handleCompanyChange}  className="input input-bordered input-sm w-full max-w-xs" />
           </label>
           </div>
 
@@ -236,9 +236,9 @@ export const TicketWriter = () => {
 
             <div className="flex-row space-x-5">
 
-            <button className="btn hover:scale-125" onClick={handleSubmit}>Submit</button>
+            <button className="btn btn-neutral hover:scale-125" onClick={handleSubmit}>Submit</button>
 
-            <button className="btn hover:scale-125" onClick={refreshPage}>Clear</button>
+            <button className="btn btn-neutral hover:scale-125" onClick={refreshPage}>Clear</button>
 
             </div>
 
